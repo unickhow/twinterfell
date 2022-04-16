@@ -11,7 +11,7 @@ const App: Component = () => {
 
   return (
     <>
-      <div id="map" class="absolute h-full w-full"></div>
+      <div id="map" class="h-screen w-screen"></div>
       <MessageBox />
     </>
   );

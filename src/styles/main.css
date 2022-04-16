@@ -2,4 +2,5 @@ body, html {
   margin: 0;
   padding: 0;
   background: #2e2e2e;
+  overflow: hidden;
 }
