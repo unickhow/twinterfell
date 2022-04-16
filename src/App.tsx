@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { onMount } from 'solid-js';
-import initMap from './components/map';
+import initMap from './components/normalMap';
 
 const App: Component = () => {
   onMount(() => {
@@ -9,10 +9,7 @@ const App: Component = () => {
 
   return (
     <>
-      <p class="text-4xl text-green-700 text-center">
-        Winter is Coming
-      </p>
-      <div id="map" class="h-[500px]"></div>
+      <div id="map"></div>
     </>
   );
 };
