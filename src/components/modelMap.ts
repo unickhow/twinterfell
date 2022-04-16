@@ -3,17 +3,19 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { disableAll } from '../utils/helper'
 
-const BASE_GEO = [121.540, 24.9855316]
+// const BASE_GEO = [121.5400, 24.9855]
+const BASE_GEO = [121.5644, 25.0341]
 
 export default function () {
   mapboxgl.accessToken = 'pk.eyJ1IjoidW5pY2tob3ciLCJhIjoiY2wyMG55aGhuMDIyajNicHBkbWRwMzQydyJ9.e9Y-71ja4OrSRqaDzN1AOQ'
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v10',
+    style: 'mapbox://styles/unickhow/cl21feoqz00gn14o9djcbszg1',
     zoom: 16.5,
     center: BASE_GEO,
     pitch: 50,
     antialias: true, // create the gl context with MSAA antialiasing, so custom layers are antialiased
+    attributionControl: false
   })
 
   disableAll(map)
@@ -53,7 +55,7 @@ export default function () {
 
       // create two three.js lights to illuminate the model
       const directionalLight = new THREE.DirectionalLight(0xffffff)
-      directionalLight.position.set(0, -70, 100).normalize()
+      directionalLight.position.set(0, 90, 100).normalize()
       this.scene.add(directionalLight)
 
       const directionalLight2 = new THREE.DirectionalLight(0xffffff)
