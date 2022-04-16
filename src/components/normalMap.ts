@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl'
+import { disableAll } from '../utils/helper';
 
 export default function () {
   mapboxgl.accessToken = 'pk.eyJ1IjoidW5pY2tob3ciLCJhIjoiY2wyMG55aGhuMDIyajNicHBkbWRwMzQydyJ9.e9Y-71ja4OrSRqaDzN1AOQ';
@@ -8,6 +9,9 @@ export default function () {
     center: [-74.5, 40], // starting position [lng, lat]
     zoom: 9 // starting zoom
   })
+
+  disableAll(map)
+
   map.flyTo({  center: [-74.50, 40]})
   map.once('moveend', () => {
     fly()
