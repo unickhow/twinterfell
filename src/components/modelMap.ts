@@ -24,17 +24,22 @@ export default function () {
   })
   disableAll(map)
 
-  map.on('style.load', async () => {
+  map.on('style.load', () => {
     landMarks.forEach(landMark => {
       map.addLayer(initModel(landMark), 'waterway-label')
     })
+    playFlyingAnimation()
+  })
+
+  async function playFlyingAnimation () {
+    console.count('play loop')
     for (const landMark of landMarks) {
       await doFly(landMark)
     }
-  })
+  }
 
   let timeout
-  function doFly (landMark, options = {}, cb = null) {
+  function doFly (landMark, options = {}) {
     // TODO: custom hook to prevent update before card fade out
     if (timeout) clearTimeout(timeout)
     timeout = setTimeout(() => {
@@ -58,8 +63,16 @@ export default function () {
         await rotateCamera()
         store.emit('rotateEnd')
         resolve('done')
+
+        if (isLastLandMark(landMark)) {
+          playFlyingAnimation()
+        }
       })
     })
+  }
+
+  function isLastLandMark (landMark) {
+    return landMark === landMarks[landMarks.length - 1]
   }
 
   function rotateCamera() {
