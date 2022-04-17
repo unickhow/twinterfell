@@ -5,11 +5,19 @@ import landMarks from '../assets/landMarks'
 import store from '../utils/store';
 import BezierEasing from 'bezier-easing'
 
-const easing = BezierEasing(.66, .62, .95, .43)
+const easing = BezierEasing(.785, .135, .15, .86)
 const BASE_GEO = [121.5644, 25.0341]
-const mapStarter = {
-  zoom: 9,
-  center: BASE_GEO
+const config = {
+  rotateAngle: 180,
+  rotateDuration: 18,
+  flyToConfig: {
+    zoom: 16,
+    speed: 0.5,
+  },
+  initConfig: {
+    zoom: 9,
+    center: BASE_GEO
+  }
 }
 
 export default function () {
@@ -20,7 +28,7 @@ export default function () {
     pitch: 80,
     antialias: true, // create the gl context with MSAA antialiasing, so custom layers are antialiased
     attributionControl: false,
-    ...mapStarter
+    ...config.initConfig
   })
   disableAll(map)
 
@@ -47,15 +55,15 @@ export default function () {
     }, 1000)
     const center = [landMark.lng, landMark.lat]
     const pitch = Math.floor(Math.random() * (70 - 40) + 30)
-    return new Promise((resolve, reject) => {
+    const index = landMarks.indexOf(landMark)
+    return new Promise((resolve) => {
       map.flyTo({
         center,
-        zoom: 16,
         pitch,
         bearing: 0,
-        speed: 0.5,
         curve: 1,
         easing: (t: number) => t,
+        ...config.flyToConfig,
         ...options
       })
       map.once('moveend', async () => {
@@ -76,10 +84,10 @@ export default function () {
   }
 
   function rotateCamera() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       map.easeTo({
-        bearing: 180,
-        duration: 18000,
+        bearing: config.rotateAngle,
+        duration: config.rotateDuration * 1000,
         easing: (t: number) => easing(t),
       })
       map.once('moveend', () => {
