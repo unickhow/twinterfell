@@ -3,7 +3,9 @@ import { disableAll } from '../utils/helper'
 import { initModel } from '../utils/initModel'
 import landMarks from '../assets/landMarks'
 import store from '../utils/store';
+import BezierEasing from 'bezier-easing'
 
+const easing = BezierEasing(.66, .62, .95, .43)
 const BASE_GEO = [121.5644, 25.0341]
 const mapStarter = {
   zoom: 9,
@@ -48,6 +50,7 @@ export default function () {
         bearing: 0,
         speed: 0.5,
         curve: 1,
+        easing: (t: number) => t,
         ...options
       })
       map.once('moveend', async () => {
@@ -61,7 +64,11 @@ export default function () {
 
   function rotateCamera() {
     return new Promise((resolve, reject) => {
-      map.rotateTo(180, { duration: 25000 })
+      map.easeTo({
+        bearing: 180,
+        duration: 18000,
+        easing: (t: number) => easing(t),
+      })
       map.once('moveend', () => {
         resolve('Done rotate')
       })
