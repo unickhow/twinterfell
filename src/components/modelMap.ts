@@ -41,7 +41,7 @@ export default function () {
       store.emit('update:info', landMark)
     }, 1000)
     const center = [landMark.lng, landMark.lat]
-    const pitch = Math.floor(Math.random() * (70 - 30) + 30)
+    const pitch = Math.floor(Math.random() * (70 - 40) + 30)
     return new Promise((resolve, reject) => {
       map.flyTo({
         center,
