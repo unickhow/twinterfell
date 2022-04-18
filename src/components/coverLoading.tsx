@@ -25,7 +25,7 @@ const CoverLoading: Component = () => {
       ${ isLoading() ? '' : 'done' }
       cover-loading fixed w-screen h-screen top-0 left-0 bg-[#141414] z-50 flex items-center justify-center
     `}>
-      <h1 class="cover-loading__title color-transparent font-bold p-16 text-9xl" style={ brandStyle }>TWIN<wbr />TER<wbr />FELL</h1>
+      <h1 class="cover-loading__title color-transparent font-bold p-16 text-8xl sm:text-9xl" style={ brandStyle }>TW<wbr />INTER<wbr />FELL</h1>
     </div>
   )
 }
