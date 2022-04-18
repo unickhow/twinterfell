@@ -12,10 +12,11 @@ const config = {
   rotateDuration: 18,
   flyToConfig: {
     zoom: 16,
-    speed: 0.5,
+    speed: 0.7,
   },
   initConfig: {
-    zoom: 9,
+    pitch: 77,
+    zoom: 7,
     center: BASE_GEO
   }
 }
@@ -25,14 +26,19 @@ export default function () {
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/unickhow/cl21feoqz00gn14o9djcbszg1',
-    pitch: 80,
     antialias: true, // create the gl context with MSAA antialiasing, so custom layers are antialiased
     attributionControl: false,
     ...config.initConfig
   })
   disableAll(map)
 
+  map.on('load', () => {
+    //* later than 'style.load'
+    store.emit('mapLoaded')
+  })
+
   map.on('style.load', () => {
+    //* faster than 'load'
     landMarks.forEach(landMark => {
       map.addLayer(initModel(landMark), 'waterway-label')
     })
@@ -55,7 +61,6 @@ export default function () {
     }, 1000)
     const center = [landMark.lng, landMark.lat]
     const pitch = Math.floor(Math.random() * (70 - 40) + 30)
-    const index = landMarks.indexOf(landMark)
     return new Promise((resolve) => {
       map.flyTo({
         center,
