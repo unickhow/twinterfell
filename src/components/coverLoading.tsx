@@ -12,9 +12,8 @@ const CoverLoading: Component = () => {
     'background-repeat': 'no-repeat',
     'background-clip': 'text',
     '-webkit-background-clip': 'text',
-    'font-size': '10rem',
     'font-family': "'Changa One', cursive",
-    'letter-spacing': '1rem',
+    'letter-spacing': '1rem'
   }
 
   store.on('mapLoaded', () => {
@@ -26,7 +25,7 @@ const CoverLoading: Component = () => {
       ${ isLoading() ? '' : 'done' }
       cover-loading fixed w-screen h-screen top-0 left-0 bg-[#141414] z-50 flex items-center justify-center
     `}>
-      <h1 class="cover-loading__title color-transparent font-bold p-16" style={ brandStyle }>TWIN<wbr />TER<wbr />FELL</h1>
+      <h1 class="cover-loading__title color-transparent font-bold p-16 text-9xl" style={ brandStyle }>TWIN<wbr />TER<wbr />FELL</h1>
     </div>
   )
 }
