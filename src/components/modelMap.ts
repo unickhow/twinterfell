@@ -4,6 +4,7 @@ import { initModel } from '../utils/initModel'
 import landMarks from '../assets/landMarks'
 import store from '../utils/store';
 import BezierEasing from 'bezier-easing'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const easing = BezierEasing(.785, .135, .15, .86)
 const BASE_GEO = [121.5644, 25.0341]
@@ -30,6 +31,7 @@ export default function () {
     attributionControl: false,
     ...config.initConfig
   })
+  map.addControl(new mapboxgl.AttributionControl(), 'bottom-left');
   disableAll(map)
 
   map.on('load', () => {

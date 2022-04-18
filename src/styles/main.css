@@ -24,3 +24,12 @@ body, html {
 .cover-loading.done .cover-loading__title {
   transform: scale(800%);
 }
+
+.mapboxgl-control-container {
+  opacity: .2;
+  transition: opacity .5s ease-in-out;
+}
+
+.mapboxgl-control-container:hover {
+  opacity: 1;
+}
