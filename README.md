@@ -8,6 +8,6 @@ flying between castles in opening was very impressive.
 
 - [ ] blender models for landmark and building
   - [ ] animate on location landing ?
-- [ ] opening loading
+- [x] opening loading
 - [ ] flying curve and speed calculation between locations
 - [ ] maybe some bgm ? [Game of Thrones Theme (Taiwanese version)](https://www.youtube.com/watch?v=Fz9eg2kisf8)
