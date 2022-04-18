@@ -1,6 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+
 body, html {
   margin: 0;
   padding: 0;
   background: #2e2e2e;
   overflow: hidden;
+}
+
+.cover-loading {
+  transition: opacity 3s ease-in-out;
+}
+
+.cover-loading .cover-loading__title {
+  transition: transform 5s ease-in-out;
+}
+
+.cover-loading.done {
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.cover-loading.done .cover-loading__title {
+  transform: scale(800%);
 }
