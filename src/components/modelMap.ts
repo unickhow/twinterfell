@@ -17,7 +17,7 @@ const config = {
   },
   initConfig: {
     pitch: 77,
-    zoom: 7,
+    zoom: 5,
     center: BASE_GEO
   }
 }

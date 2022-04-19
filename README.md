@@ -6,7 +6,7 @@ flying between castles in opening was very impressive.
 
 ### Todo
 
-- [ ] blender models for landmark and building
+- [x] blender models for landmark and building
   - [ ] animate on location landing ?
 - [x] opening loading
 - [ ] flying curve and speed calculation between locations

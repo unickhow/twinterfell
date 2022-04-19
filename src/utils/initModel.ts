@@ -39,18 +39,17 @@ export const initModel = (landMark) => {
 
       // create two three.js lights to illuminate the model
       const directionalLight = new THREE.DirectionalLight(0xffffff)
-      directionalLight.position.set(0, 90, 100).normalize()
+      directionalLight.position.set(0, 10, 0).normalize()
       this.scene.add(directionalLight)
 
       const directionalLight2 = new THREE.DirectionalLight(0xffffff)
-      directionalLight2.position.set(0, 70, 100).normalize()
+      directionalLight2.position.set(0, 20, 0).normalize()
       this.scene.add(directionalLight2)
 
       // use the three.js GLTF loader to add the 3D model to the three.js scene
       const loader = new GLTFLoader()
       loader.load(
-        // '/src/assets/unickhow_logo.glb',
-        'https://docs.mapbox.com/mapbox-gl-js/assets/34M_17/34M_17.gltf',
+        '/lighthouse.gltf',
         (gltf) => {
           this.scene.add(gltf.scene)
         }
