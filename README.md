@@ -13,3 +13,4 @@ flying between castles in opening was very impressive.
 - [x] opening loading
 - [ ] flying curve and speed calculation between locations
 - [ ] maybe some bgm ? [Game of Thrones Theme (Taiwanese version)](https://www.youtube.com/watch?v=Fz9eg2kisf8)
+- [ ] more info panel and define style
