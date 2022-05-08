@@ -1,9 +1,11 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/chart.js': ^2.9.37
   '@unocss/preset-mini': ^0.30.4
   '@unocss/vite': ^0.30.4
   bezier-easing: ^2.1.0
+  chart.js: ^3.7.1
   mapbox-gl: ^2.8.1
   mitt: ^3.0.0
   solid-js: ^1.3.13
@@ -14,7 +16,9 @@ specifiers:
   vite-plugin-solid: ^2.2.6
 
 dependencies:
+  '@types/chart.js': 2.9.37
   bezier-easing: 2.1.0
+  chart.js: 3.7.1
   mitt: 3.0.0
   solid-js: 1.3.13
   three: 0.139.2
@@ -420,6 +424,12 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /@types/chart.js/2.9.37:
+    resolution: {integrity: sha512-9bosRfHhkXxKYfrw94EmyDQcdjMaQPkU1fH2tDxu8DWXxf1mjzWQAV4laJF51ZbC2ycYwNDvIm1rGez8Bug0vg==}
+    dependencies:
+      moment: 2.29.3
+    dev: false
+
   /@unocss/config/0.30.4:
     resolution: {integrity: sha512-TWIZKCq1QFHdSlgc1HSC64OF05PqbPPK6DOIlExIkwRH0DCU3ODLYJTnH37hfpGkKsBJz/t/vmNfS7hlG4c0DA==}
     engines: {node: '>=14'}
@@ -522,6 +532,10 @@ packages:
       escape-string-regexp: 1.0.5
       supports-color: 5.5.0
     dev: true
+
+  /chart.js/3.7.1:
+    resolution: {integrity: sha512-8knRegQLFnPQAheZV8MjxIXc5gQEfDFD897BJgv/klO/vtIyFFmgMXrNfgrXpbTr/XbTturxRgxIXx/Y+ASJBA==}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -956,6 +970,10 @@ packages:
 
   /mitt/3.0.0:
     resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
+
+  /moment/2.29.3:
+    resolution: {integrity: sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==}
     dev: false
 
   /mrmime/1.0.0:

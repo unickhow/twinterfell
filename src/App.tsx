@@ -3,6 +3,7 @@ import { onMount } from 'solid-js';
 // import initMap from './components/normalMap';
 import initMap from './components/modelMap';
 import MessageBox from './components/messageBox';
+import ChartBox from './components/chartBox';
 import CoverLoading from './components/coverLoading';
 
 const App: Component = () => {
@@ -15,6 +16,7 @@ const App: Component = () => {
       <CoverLoading />
       <div id="map" class="h-screen w-screen"></div>
       <MessageBox />
+      <ChartBox />
     </>
   );
 };
